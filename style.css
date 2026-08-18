@@ -1,0 +1,340 @@
+:root {
+    /* الثلاثة ألوان الأساسية للموقع */
+    --bg-dark: #f8fafc;       /* الخلفية الأساسية للموقع */
+    --bg-card: #0f172a;       /* لون خلفية الكروت والشريط العلوي */
+    --primary-gold: #fbbf24;  /* اللون الذهبي للأزرار والعناوين */
+    
+    /* ألوان فرعية للتناسق والنصوص */
+    --hover-gold: #d97706;    /* درجة أغمق للذهبي عند التمرير */
+    --text-main: #f8fafc;     /* لون النصوص الأساسية */
+    --text-muted: #94a3b8;    /* لون النصوص الفرعية */
+    --border-color: #334155;  /* لون الحدود الفاصلة */
+    --radius: 12px;
+}
+
+/* تطبيق خلفية الموقع */
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* تطبيق لون الكروت */
+.media-card, .navbar, .footer {
+    background-color: var(--bg-card);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tajawal', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(30, 41, 59, 0.95);
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    font-size: 28px;
+    color: var(--primary-gold);
+}
+
+.brand-title {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--primary-gold);
+}
+
+.brand-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-item {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.3s;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+.nav-item:hover, .nav-item.active {
+    color: var(--primary-gold);
+    background-color: rgba(251, 191, 36, 0.1);
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: radial-gradient(circle, rgba(30, 41, 59, 1) 0%, rgba(15, 23, 42, 1) 100%);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-content h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    color: var(--text-muted);
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 25px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.text-gold { color: var(--primary-gold); }
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-gold {
+    background-color: var(--primary-gold);
+    color: #000;
+}
+
+.btn-gold:hover {
+    background-color: var(--hover-gold);
+    color: #fff;
+}
+
+.btn-outline {
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+}
+
+.btn-outline:hover {
+    border-color: var(--primary-gold);
+    color: var(--primary-gold);
+}
+
+.btn-full { width: 100%; }
+
+/* Main Sections */
+.main-content {
+    padding: 40px 0;
+}
+
+.content-section {
+    scroll-margin-top: 90px;
+    margin-bottom: 40px;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.section-icon {
+    font-size: 26px;
+    padding: 12px;
+    background: var(--bg-card);
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+}
+
+.reel-icon { color: #ef4444; }
+.video-icon { color: #3b82f6; }
+.image-icon { color: #10b981; }
+
+.section-divider {
+    border: none;
+    height: 1px;
+    background: var(--border-color);
+    margin: 40px 0;
+}
+
+/* Media Cards & Grid */
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.media-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.media-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.media-wrapper {
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.media-wrapper video, .media-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Reels Card Specifics */
+.reel-card .media-wrapper {
+    height: 420px;
+}
+
+.reel-card video {
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.badge {
+    align-self: flex-start;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.badge-reel { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
+.badge-video { background: rgba(59, 130, 246, 0.2); color: #3b82f6; }
+.badge-image { background: rgba(16, 185, 129, 0.2); color: #10b981; }
+
+.card-title {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-container { flex-direction: column; gap: 15px; }
+    .hero-content h2 { font-size: 26px; }
+}
+
+span {
+    --bg-dark: #0f172a;
+    --bg-card: #1e293b;
+    --primary-gold: #fbbf24;
+    --hover-gold: #d97706;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+    --radius: 12px;
+}
+
+/* تحديد ارتفاع موحد لجميع كروت الصور */
+.media-card .media-wrapper {
+    height: 220px; /* الارتفاع الموحد */
+    width: 100%;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.media-card .media-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* بيخلي الصورة تظبط نفسها جوة المربع بدون مط أو تشويه */
+}
+
+/* 1. مقاس ثابت ومظبوط لكروت الصور والمقاطع العادية */
+.media-card .media-wrapper {
+    height: 220px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #000;
+}
+
+/* 2. استثناء واسترجاع المقاس الطولي الخاص بالريلز فقط (Reels) */
+.reel-card .media-wrapper {
+    height: 480px !important; /* ارتفاع طولي مخصص للريلز */
+}
+
+/* ضبط الفيديو والصورة جوة الحاوية */
+.media-wrapper img, 
+.media-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+body {
+    background-color: #3e1848;
+    text-shadow: #000;
+    text-main:var(--text-main)
+}
